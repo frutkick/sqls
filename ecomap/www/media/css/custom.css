@@ -1,0 +1,100 @@
+/* Nav bar*/
+body{
+	overflow-x:hidden;
+}
+.navbar.navbar-default{
+	height: 3.7em;
+	text-transform:uppercase;
+}
+.navbar img{
+	height: 70px;
+}
+
+.nav.navbar-nav li{
+	height: 100%;
+	line-height: 4.5em;
+	vertical-align: center;
+	cursor: pointer;
+	
+}
+.nav.navbar-nav.navbar-right{
+	margin-top: -2.2em;
+}
+
+/*problems filter */
+.problem_filter{
+}
+.toogle{
+	position: absolute;
+	background-color: #ccc;
+	right: -3.6em;
+	bottom:1.6em;
+	-webkit-transform: rotate(-90deg);
+	border:1px solid transparent;
+	border-radius: 0 0 5px 5px;
+	padding: 0.1em;
+	cursor: pointer;
+
+}
+.list-group-item{
+
+}
+#filter{
+	position: absolute;
+	top:6.4em;
+	border:2px solid #ccc;
+	-webkit-transition:1s;
+	transition:1s;
+
+
+}
+.toggle_hide{
+	left: -25%;
+
+}
+
+#filter h4{
+	text-align: center;
+	margin-bottom: 1.2em
+}
+
+/*inform about problem block*/
+#inform_probl_btn{
+	transition:0.1s;
+}
+#inform_probl_btn:hover{
+	background-color: #aaa;
+}
+.inform_probl_block{
+	margin-left: 100%;
+}
+.hide_probl_block{
+	margin-left: 50%;
+}
+
+/*Create User Form*/
+.form-group input {
+	width: 90%
+}
+.form-group label{
+	text-align: center;
+}
+
+#user_form{
+	width: 200px;
+}
+#user_form input{
+	margin-top: 20px;
+}
+#user_form .form-group,.checkbox{
+	margin-left: 15px;
+}
+.checkbox {
+	font-size: 0.8em
+}
+#user_form button{
+	margin-left:25% 
+}
+#user_form .btn.btn-primary {
+	width: 100px;
+}
