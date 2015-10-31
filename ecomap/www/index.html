@@ -40,12 +40,12 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Вхід<span class="caret"></span></a></a>
           <ul class="dropdown-menu">
             <li id="user_form">
-              <form ng-controller="UserController as ctrl" ng-submit='submit()' enctype="application/json">
+              <form ng-controller="UserController as ctrl" ng-submit='submit()' mimetype="application/json">
                 <label class="btn btn-secondary" href='' ng-click="ctrl.setTab(1)">Login</label>
                 <label class="btn btn-secondary" href='' ng-click="ctrl.setTab(2)">Register</label>
                 <div class="login" ng-show="ctrl.isSet(1)">
                   <div class="form-group">                  
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email" namre="email" ng-model="user.email" >
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" ng-model="user.email" >
                   </div>
                   <div class="form-group">                  
                       <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="register" ng-show="ctrl.isSet(2)">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" namre="email" ng-model="user.email">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" namee="email" ng-model="user.email">
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control" id="inputFirstName" placeholder="First name" name="firstName" ng-model="user.first_name">

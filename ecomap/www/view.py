@@ -10,12 +10,12 @@ def func():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    return request.method
+    return request.json['email']
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    return request.method
+    return request.json
 
 if __name__ == '__main__':
     app.run()
