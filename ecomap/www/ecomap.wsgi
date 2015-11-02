@@ -13,4 +13,8 @@ execfile(activate_this, dict(__file__=activate_this))
 sys.path.insert(0, '/home/frutkic/projects/ecomap/ecomap/www')
 sys.path.insert(1, '/home/frutkic/projects/ecomap/ecomap/src/python')
 
+from ecomap.utils import get_logger
+
+get_logger()
+
 from view import app as application

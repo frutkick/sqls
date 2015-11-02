@@ -16,6 +16,7 @@ import ecomap.utils
 from ecomap.config import Config
 
 _CONFIG = Config().get_config()
+_LOG = logging.getLogger('db_pool')
 
 
 class MySQLPoolSizeError(MySQLdb.DatabaseError):
@@ -27,7 +28,7 @@ def retry(func):
     """Decorator function handling reconnection issues to DB."""
 
     @wraps(func)
-    def wrapper(retries, delay):
+    def wrapper(arg, retries=3, delay=1):
         """Wrapped function which tries to connect to DB.
             params:
             - retries - nubmer of attempts.
@@ -36,10 +37,14 @@ def retry(func):
         while True:
             retries -= 1
             try:
-                return func()
+                _LOG.info('Try to execute sql.')
+                func(arg)
+                break
             except MySQLPoolSizeError as error:
+                _LOG.warn('Out of free connections.')
                 pass
             except MySQLdb.Error as error:
+                _LOG.warn('Error in database.')
                 pass
             if retries:
                 time.sleep(delay)
@@ -65,7 +70,7 @@ class DBPool(object):
         self._passwd = passwd
         self._db_name = db_name
         self.connection_ttl = ttl
-        self.log = logging.getLogger('db_pool')
+        self.log = _LOG
         self.lock = threading.RLock()
 
     def __del__(self):

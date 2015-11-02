@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+from ecomap.db import util
+
 app = Flask(__name__, template_folder='.')
 
 
@@ -15,6 +17,8 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    json = request.json
+    util.create_user(json)
     return request.json
 
 if __name__ == '__main__':

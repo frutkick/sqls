@@ -87,7 +87,7 @@ app.controller("UserController", function ($scope, $http){
 
   $scope.submit = function() {
     alert($scope.user.email);
-    $http.post('/login', $scope.user).success(function(results) {
+    $http.post('/register', $scope.user).success(function(results) {
       alert(results);
     }).error(function(error) {
       alert(error);
