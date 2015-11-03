@@ -85,9 +85,18 @@ app.controller("UserController", function ($scope, $http){
     return this.tab === tab;
   };
 
-  $scope.submit = function() {
+  $scope.register = function() {
     alert($scope.user.email);
     $http.post('/register', $scope.user).success(function(results) {
+      alert(results);
+    }).error(function(error) {
+      alert(error);
+    });
+  };
+
+  $scope.login = function() {
+    alert($scope.user.email);
+    $http.post('/login', $scope.user).success(function(results) {
       alert(results);
     }).error(function(error) {
       alert(error);

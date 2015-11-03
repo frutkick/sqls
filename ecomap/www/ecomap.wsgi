@@ -2,10 +2,8 @@ import sys
 import os
 
 os.environ['PRODROOT'] = '/home/frutkic/projects/ecomap/ecomap'
-os.environ['PYSRCROOT'] = '/home/frutkic/projects/ecomap/ecomap/src/python'
-os.environ['CONFROOT'] = '/home/frutkic/projects/ecomap/ecomap/etc'
-os.environ['PYTHONPATH'] = '/home/frutkic/projects/ecomap/ecomap/src/python'
-os.environ['PYTHON'] = 'home/frutkic/projects/ecomap/ecomap/etc/python'
+os.environ['CONFROOT'] = os.path.dirname(os.environ['PRODROOT']) + '/ecomap/etc'
+os.environ['PYSRCROOT'] = os.path.dirname(os.environ['PRODROOT']) + '/ecomap/src/python'
 
 activate_this = '/home/frutkic/venv/ecomap/bin/activate_this.py'
 execfile(activate_this, dict(__file__=activate_this))

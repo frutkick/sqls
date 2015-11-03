@@ -40,7 +40,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Вхід<span class="caret"></span></a></a>
           <ul class="dropdown-menu">
             <li id="user_form">
-              <form ng-controller="UserController as ctrl" ng-submit='submit()' mimetype="application/json">
+              <form ng-controller="UserController as ctrl" mimetype="application/json">
                 <label class="btn btn-secondary" href='' ng-click="ctrl.setTab(1)">Login</label>
                 <label class="btn btn-secondary" href='' ng-click="ctrl.setTab(2)">Register</label>
                 <div class="login" ng-show="ctrl.isSet(1)">
@@ -50,7 +50,7 @@
                   <div class="form-group">                  
                       <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
                   </div>
-                  <!-- <button type="button" class="btn btn-primary" ng-click="login()">Login</button> -->
+                  <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
                 </div>
                 <div class="register" ng-show="ctrl.isSet(2)">
                   <div class="form-group">
@@ -65,9 +65,8 @@
                   <div class="form-group">
                     <input type="password" class="form-control" id="inputPassword"  placeholder="Password" ng-model="user.password">
                   </div>
-                  <!-- <button type="button" class="btn btn-primary" ng-click="register()">Register</button> -->
+                  <button type="button" class="btn btn-primary" ng-click="register()">Register</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
             </li>
           </ul>
